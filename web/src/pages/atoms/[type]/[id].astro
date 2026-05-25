@@ -1,0 +1,82 @@
+---
+import Base from "../../../layouts/Base.astro";
+import catalog from "../../../../public/exports/catalog.json";
+
+export function getStaticPaths() {
+  return catalog.atoms.map((atom: any) => ({
+    params: { type: atom.type, id: atom.id },
+    props: { atom },
+  }));
+}
+
+const { atom } = Astro.props;
+
+// Pick the type-specific payload
+const controlFamily = atom.control_family;
+const control = atom.control;
+const evidenceType = atom.evidence_type;
+const auditRequirement = atom.audit_requirement;
+---
+<Base title={atom.name} description={atom.description ?? `${atom.type} atom`}>
+  <p><a href="/atoms/">← All atoms</a></p>
+  <h1>{atom.name}</h1>
+  <p style="color: var(--muted);">
+    <code>{atom.type}</code> · <code>v{atom.version}</code>
+  </p>
+
+  {atom.description && <p>{atom.description}</p>}
+
+  {atom.tags && atom.tags.length > 0 && (
+    <p>
+      Tags: {atom.tags.map((tag: string) => (
+        <span style="display: inline-block; font-size: 0.875rem; background: #f4ece4; padding: 0.125rem 0.5rem; border-radius: 0.25rem; margin-right: 0.25rem;">{tag}</span>
+      ))}
+    </p>
+  )}
+
+  {controlFamily && (
+    <section>
+      <h2>Control family</h2>
+      <dl style="display: grid; grid-template-columns: max-content 1fr; gap: 0.5rem 1rem;">
+        {controlFamily.frameworks && (<><dt>Frameworks</dt><dd>{controlFamily.frameworks.map((f: string) => <code style="margin-right: 0.25rem;">{f}</code>)}</dd></>)}
+        {controlFamily.domain && (<><dt>Domain</dt><dd>{controlFamily.domain}</dd></>)}
+      </dl>
+    </section>
+  )}
+
+  {control && (
+    <section>
+      <h2>Control</h2>
+      <dl style="display: grid; grid-template-columns: max-content 1fr; gap: 0.5rem 1rem;">
+        {control.family && (<><dt>Family</dt><dd><code>{control.family}</code></dd></>)}
+        {control.frameworks && (<><dt>Frameworks</dt><dd>{control.frameworks.map((f: string) => <code style="margin-right: 0.25rem;">{f}</code>)}</dd></>)}
+        {control.requirement && (<><dt>Requirement</dt><dd>{control.requirement}</dd></>)}
+      </dl>
+    </section>
+  )}
+
+  {evidenceType && (
+    <section>
+      <h2>Evidence type</h2>
+      <dl style="display: grid; grid-template-columns: max-content 1fr; gap: 0.5rem 1rem;">
+        {evidenceType.format && (<><dt>Format</dt><dd><code>{evidenceType.format}</code></dd></>)}
+        {evidenceType.retention && (<><dt>Retention</dt><dd>{evidenceType.retention}</dd></>)}
+        {evidenceType.automation && (<><dt>Automation</dt><dd><code>{evidenceType.automation}</code></dd></>)}
+      </dl>
+    </section>
+  )}
+
+  {auditRequirement && (
+    <section>
+      <h2>Audit requirement</h2>
+      <dl style="display: grid; grid-template-columns: max-content 1fr; gap: 0.5rem 1rem;">
+        {auditRequirement.frequency && (<><dt>Frequency</dt><dd><code>{auditRequirement.frequency}</code></dd></>)}
+        {auditRequirement.scope && (<><dt>Scope</dt><dd>{auditRequirement.scope}</dd></>)}
+        {auditRequirement.frameworks && (<><dt>Frameworks</dt><dd>{auditRequirement.frameworks.map((f: string) => <code style="margin-right: 0.25rem;">{f}</code>)}</dd></>)}
+      </dl>
+    </section>
+  )}
+
+  <h2>Raw atom</h2>
+  <p><a href={`/atoms/${atom.type}/${atom.id}.json`}>/atoms/{atom.type}/{atom.id}.json</a> · <a href="/schemas/atom-v1.json">schema</a></p>
+</Base>

@@ -1,0 +1,39 @@
+---
+import Base from "../layouts/Base.astro";
+---
+<Base title="How to use" description="How to consume compliance-atoms in your application.">
+  <h1>How to use compliance-atoms</h1>
+
+  <h2>Read the catalog over HTTPS</h2>
+  <p>Every artifact is served under stable URLs with correct content-types:</p>
+  <pre><code>curl https://compliance-atoms.com/exports/catalog.json
+curl https://compliance-atoms.com/atoms/control-family/access-control.json
+curl https://compliance-atoms.com/frameworks/soc2-type2.json
+curl https://compliance-atoms.com/schemas/composition-v1.json</code></pre>
+
+  <h2>Resolve a compliance framework</h2>
+  <p>A framework composition lists references to atoms by URI and version. To instantiate the framework,
+  fetch each referenced atom and assemble: control families → controls → evidence types → audit requirements.</p>
+
+  <pre><code>{`// pseudo-code
+const composition = await fetch("/frameworks/soc2-type2.json").then(r => r.json());
+const refs = composition.references;
+const controlFamilies = await Promise.all(
+  (refs.control_families ?? []).map(r => fetch(uriToUrl(r.ref)).then(r => r.json()))
+);
+const evidenceTypes = await Promise.all(
+  (refs.evidence_types ?? []).map(r => fetch(uriToUrl(r.ref)).then(r => r.json()))
+);
+const framework = compileFramework({ controlFamilies, evidenceTypes });`}</code></pre>
+
+  <h2>Cross-framework equivalence rules</h2>
+  <p>Rules in <a href="/exports/catalog.json"><code>/exports/catalog.json</code></a> (under the <code>rules</code>
+  key) declare cross-framework equivalences. Example: a SOC2 <code>CC6.1</code> control maps equivalently to
+  ISO 27001 <code>A.9.1.1</code>. These equivalences let you satisfy multiple frameworks from a single
+  control implementation.</p>
+
+  <h2>Automation and evidence collection</h2>
+  <p>v0.1 ships the catalog and its JSON Schema; evidence collectors for specific platforms
+  (AWS, GCP, Azure, GitHub) are v0.2 work — they bind <code>evidence-type</code> atoms to platform
+  APIs that produce the required evidence automatically.</p>
+</Base>
