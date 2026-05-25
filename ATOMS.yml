@@ -1,37 +1,28 @@
 # ATOMS.yml — catalog manifest for compliance-atoms
 #
-# See https://github.com/convergent-systems-co/atoms-spec for the canonical schema this conforms to.
+# Conforms to: https://schema-atoms.com/
+# spec_version: atoms-spec/v1.1.0
 
+spec_version: atoms-spec/v1.1.0
 name: compliance-atoms
 version: 0.1.0
-spec: atoms-spec/v1
-domain: compliance-atoms.com
-ecosystem:
-  federation: xdao.co
-  redirect: compliance.xdao.co
-
-purpose: |
+canonical_domain: compliance-atoms.com
+federation: convergent-systems.co
+description: |
   SOC2, HIPAA, ISO27001, PCI, GDPR mapped once with shared control families, evidence types, audit requirements, and cross-framework equivalence — ending the industry-wide redundancy of duplicate control mappings.
-
-atomTypes:
+atom_types:
   - control-family
   - control
   - evidence-type
   - audit-requirement
-
-compositionType: frameworks
-compositionDir: frameworks
-
-ruleTypes:
-  - framework-requirement
-  - evidence-sufficiency
-  - cross-framework-equivalence
-
-runtimeConsumers:
+composition_type: frameworks
+composition_dir: frameworks
+runtime_consumers:
   - olympus
   - aish
-
-license: Apache-2.0
-maintainers:
-  - name: Convergent Systems
-    contact: maintainers@xdao.co
+lifecycle:
+  current: draft
+licensing:
+  code: Apache-2.0
+steward: convergent-systems-co
+infrastructure_operator: convergent-systems-co
