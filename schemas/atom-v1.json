@@ -49,6 +49,10 @@
       "type": "array",
       "items": { "type": "string", "minLength": 1, "maxLength": 60 },
       "uniqueItems": true
+    },
+    "content": {
+      "description": "Supplementary structured content for this atom — sub-domains, retention policies, or other type-specific data.",
+      "type": "object"
     }
   }
 }

@@ -1,0 +1,85 @@
+{
+  "catalog": "compliance-atoms",
+  "version": "0.1.0",
+  "built_at": "2026-05-26T16:01:20+00:00",
+  "atoms": [
+    {
+      "schema": "https://compliance-atoms.com/schemas/atom-v1.json",
+      "type": "control",
+      "id": "multi-factor-authentication",
+      "version": "1.0.0",
+      "name": "Multi-Factor Authentication for Production Access",
+      "description": "Requires multi-factor authentication (MFA) for all accounts with access to production systems, infrastructure, or sensitive data stores. MFA must combine at least two independent factors from the categories: knowledge (password/PIN), possession (TOTP/hardware key), and inherence (biometric).",
+      "framework": "soc2",
+      "control_id": "CC-MFA-001",
+      "requirement_text": "All accounts with production access MUST use MFA",
+      "evidence_types": [
+        "audit-log"
+      ],
+      "tags": [
+        "mfa",
+        "authentication",
+        "production",
+        "access-control",
+        "soc2"
+      ]
+    },
+    {
+      "schema": "https://compliance-atoms.com/schemas/atom-v1.json",
+      "type": "control-family",
+      "id": "access-control",
+      "version": "1.0.0",
+      "name": "Access Control",
+      "description": "The Access Control family covers authentication, authorization, and least-privilege enforcement across all systems and services. It spans identity verification, role-based and attribute-based access decisions, privileged access management, and session controls.",
+      "content": {
+        "applies_to": [
+          "iso27001",
+          "soc2",
+          "hipaa"
+        ],
+        "sub_domains": [
+          "authentication",
+          "authorization",
+          "least-privilege",
+          "privileged-access",
+          "session-management"
+        ]
+      },
+      "tags": [
+        "access-control",
+        "authentication",
+        "authorization",
+        "least-privilege",
+        "identity"
+      ]
+    },
+    {
+      "schema": "https://compliance-atoms.com/schemas/atom-v1.json",
+      "type": "evidence-type",
+      "id": "audit-log",
+      "version": "1.0.0",
+      "name": "Audit Log Records",
+      "description": "Tamper-evident logs capturing all access events, changes, and administrative actions",
+      "content": {
+        "retention_days": 365,
+        "required_fields": [
+          "timestamp",
+          "actor",
+          "action",
+          "resource",
+          "outcome"
+        ],
+        "tamper_evidence": "immutable storage or cryptographic hash chaining"
+      },
+      "tags": [
+        "audit",
+        "logging",
+        "evidence",
+        "access-events",
+        "compliance"
+      ]
+    }
+  ],
+  "compositions": [],
+  "rules": []
+}
