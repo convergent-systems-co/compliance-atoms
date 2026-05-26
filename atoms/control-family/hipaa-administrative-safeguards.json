@@ -1,0 +1,15 @@
+{
+  "schema": "https://compliance-atoms.com/schemas/atom-v1.json",
+  "type": "control-family",
+  "id": "hipaa-administrative-safeguards",
+  "version": "1.0.0",
+  "name": "HIPAA Administrative Safeguards",
+  "description": "Administrative Safeguards (45 CFR §164.308) are the largest category of the HIPAA Security Rule, requiring covered entities to implement policies, procedures, and training programs to manage the selection, development, implementation, and maintenance of security measures protecting ePHI.",
+  "content": {
+    "applies_to": ["hipaa"],
+    "sub_domains": ["security-management-process", "security-personnel", "information-access-management", "workforce-training", "evaluation", "contingency-plan", "business-associate-contracts"],
+    "control_count": 9,
+    "cfr_section": "§164.308"
+  },
+  "tags": ["hipaa", "administrative-safeguards", "security-management", "workforce-training", "contingency-plan"]
+}

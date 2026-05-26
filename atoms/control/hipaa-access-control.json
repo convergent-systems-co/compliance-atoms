@@ -1,0 +1,17 @@
+{
+  "schema": "https://compliance-atoms.com/schemas/atom-v1.json",
+  "type": "control",
+  "id": "hipaa-access-control",
+  "version": "1.0.0",
+  "name": "HIPAA Access Control",
+  "description": "Implement technical policies and procedures for electronic information systems that maintain electronic protected health information to allow access only to those persons or software programs that have been granted access rights.",
+  "framework": "hipaa",
+  "control_id": "§164.312(a)(1)",
+  "requirement_text": "Implement technical policies and procedures for electronic information systems that maintain electronic protected health information to allow access only to those persons or software programs that have been granted access rights.",
+  "evidence_types": ["audit-log", "access-review-log"],
+  "content": {
+    "family_ref": "hipaa-technical-safeguards",
+    "implementation_specs": ["unique-user-identification", "emergency-access-procedure", "automatic-logoff", "encryption-and-decryption"]
+  },
+  "tags": ["hipaa", "access-control", "ephi", "technical-safeguards", "least-privilege"]
+}

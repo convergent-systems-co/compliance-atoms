@@ -1,0 +1,18 @@
+{
+  "schema": "https://compliance-atoms.com/schemas/atom-v1.json",
+  "type": "control",
+  "id": "hipaa-audit-controls",
+  "version": "1.0.0",
+  "name": "HIPAA Audit Controls",
+  "description": "Implement hardware, software, and/or procedural mechanisms that record and examine activity in information systems that contain or use electronic protected health information.",
+  "framework": "hipaa",
+  "control_id": "§164.312(b)",
+  "requirement_text": "Implement hardware, software, and/or procedural mechanisms that record and examine activity in information systems that contain or use electronic protected health information.",
+  "evidence_types": ["hipaa-audit-log"],
+  "content": {
+    "family_ref": "hipaa-technical-safeguards",
+    "implementation_specs": [],
+    "notes": "This is a required implementation specification with no addressable sub-specs. All ePHI system activity must be logged and reviewable."
+  },
+  "tags": ["hipaa", "audit-controls", "ephi", "logging", "technical-safeguards"]
+}

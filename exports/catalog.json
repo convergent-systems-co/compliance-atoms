@@ -1,8 +1,95 @@
 {
   "catalog": "compliance-atoms",
   "version": "0.1.0",
-  "built_at": "2026-05-26T17:23:22+00:00",
+  "built_at": "2026-05-26T21:06:18+00:00",
   "atoms": [
+    {
+      "schema": "https://compliance-atoms.com/schemas/atom-v1.json",
+      "type": "control",
+      "id": "hipaa-access-control",
+      "version": "1.0.0",
+      "name": "HIPAA Access Control",
+      "description": "Implement technical policies and procedures for electronic information systems that maintain electronic protected health information to allow access only to those persons or software programs that have been granted access rights.",
+      "framework": "hipaa",
+      "control_id": "§164.312(a)(1)",
+      "requirement_text": "Implement technical policies and procedures for electronic information systems that maintain electronic protected health information to allow access only to those persons or software programs that have been granted access rights.",
+      "evidence_types": [
+        "audit-log",
+        "access-review-log"
+      ],
+      "content": {
+        "family_ref": "hipaa-technical-safeguards",
+        "implementation_specs": [
+          "unique-user-identification",
+          "emergency-access-procedure",
+          "automatic-logoff",
+          "encryption-and-decryption"
+        ]
+      },
+      "tags": [
+        "hipaa",
+        "access-control",
+        "ephi",
+        "technical-safeguards",
+        "least-privilege"
+      ]
+    },
+    {
+      "schema": "https://compliance-atoms.com/schemas/atom-v1.json",
+      "type": "control",
+      "id": "hipaa-audit-controls",
+      "version": "1.0.0",
+      "name": "HIPAA Audit Controls",
+      "description": "Implement hardware, software, and/or procedural mechanisms that record and examine activity in information systems that contain or use electronic protected health information.",
+      "framework": "hipaa",
+      "control_id": "§164.312(b)",
+      "requirement_text": "Implement hardware, software, and/or procedural mechanisms that record and examine activity in information systems that contain or use electronic protected health information.",
+      "evidence_types": [
+        "hipaa-audit-log"
+      ],
+      "content": {
+        "family_ref": "hipaa-technical-safeguards",
+        "implementation_specs": [],
+        "notes": "This is a required implementation specification with no addressable sub-specs. All ePHI system activity must be logged and reviewable."
+      },
+      "tags": [
+        "hipaa",
+        "audit-controls",
+        "ephi",
+        "logging",
+        "technical-safeguards"
+      ]
+    },
+    {
+      "schema": "https://compliance-atoms.com/schemas/atom-v1.json",
+      "type": "control",
+      "id": "hipaa-transmission-security",
+      "version": "1.0.0",
+      "name": "HIPAA Transmission Security",
+      "description": "Implement technical security measures to guard against unauthorized access to electronic protected health information that is being transmitted over an electronic communications network.",
+      "framework": "hipaa",
+      "control_id": "§164.312(e)(1)",
+      "requirement_text": "Implement technical security measures to guard against unauthorized access to electronic protected health information that is being transmitted over an electronic communications network.",
+      "evidence_types": [
+        "audit-log"
+      ],
+      "content": {
+        "family_ref": "hipaa-technical-safeguards",
+        "implementation_specs": [
+          "integrity-controls",
+          "encryption"
+        ],
+        "notes": "Encryption is an addressable implementation specification — covered entities must encrypt ePHI in transit or document why encryption is not reasonable and appropriate."
+      },
+      "tags": [
+        "hipaa",
+        "transmission-security",
+        "encryption",
+        "tls",
+        "ephi",
+        "technical-safeguards"
+      ]
+    },
     {
       "schema": "https://compliance-atoms.com/schemas/atom-v1.json",
       "type": "control",
@@ -229,6 +316,95 @@
     {
       "schema": "https://compliance-atoms.com/schemas/atom-v1.json",
       "type": "control-family",
+      "id": "hipaa-administrative-safeguards",
+      "version": "1.0.0",
+      "name": "HIPAA Administrative Safeguards",
+      "description": "Administrative Safeguards (45 CFR §164.308) are the largest category of the HIPAA Security Rule, requiring covered entities to implement policies, procedures, and training programs to manage the selection, development, implementation, and maintenance of security measures protecting ePHI.",
+      "content": {
+        "applies_to": [
+          "hipaa"
+        ],
+        "sub_domains": [
+          "security-management-process",
+          "security-personnel",
+          "information-access-management",
+          "workforce-training",
+          "evaluation",
+          "contingency-plan",
+          "business-associate-contracts"
+        ],
+        "control_count": 9,
+        "cfr_section": "§164.308"
+      },
+      "tags": [
+        "hipaa",
+        "administrative-safeguards",
+        "security-management",
+        "workforce-training",
+        "contingency-plan"
+      ]
+    },
+    {
+      "schema": "https://compliance-atoms.com/schemas/atom-v1.json",
+      "type": "control-family",
+      "id": "hipaa-physical-safeguards",
+      "version": "1.0.0",
+      "name": "HIPAA Physical Safeguards",
+      "description": "Physical Safeguards (45 CFR §164.310) require covered entities and business associates to implement physical measures, policies, and procedures to protect electronic information systems and related buildings and equipment from natural and environmental hazards and unauthorized intrusion.",
+      "content": {
+        "applies_to": [
+          "hipaa"
+        ],
+        "sub_domains": [
+          "facility-access-controls",
+          "workstation-use",
+          "workstation-security",
+          "device-and-media-controls"
+        ],
+        "control_count": 4,
+        "cfr_section": "§164.310"
+      },
+      "tags": [
+        "hipaa",
+        "physical-safeguards",
+        "facility-access",
+        "workstation",
+        "device-controls"
+      ]
+    },
+    {
+      "schema": "https://compliance-atoms.com/schemas/atom-v1.json",
+      "type": "control-family",
+      "id": "hipaa-technical-safeguards",
+      "version": "1.0.0",
+      "name": "HIPAA Technical Safeguards",
+      "description": "Technical Safeguards (45 CFR §164.312) require covered entities and business associates to implement technical policies and procedures to protect electronic protected health information (ePHI). Covers access control, audit controls, integrity, person or entity authentication, and transmission security.",
+      "content": {
+        "applies_to": [
+          "hipaa"
+        ],
+        "sub_domains": [
+          "access-control",
+          "audit-controls",
+          "integrity",
+          "person-authentication",
+          "transmission-security"
+        ],
+        "control_count": 5,
+        "cfr_section": "§164.312"
+      },
+      "tags": [
+        "hipaa",
+        "technical-safeguards",
+        "ephi",
+        "access-control",
+        "audit",
+        "transmission-security"
+      ]
+    },
+    {
+      "schema": "https://compliance-atoms.com/schemas/atom-v1.json",
+      "type": "control-family",
       "id": "iso27001-organizational",
       "version": "1.0.0",
       "name": "ISO27001 Organizational Controls",
@@ -396,6 +572,37 @@
         "evidence",
         "access-events",
         "compliance"
+      ]
+    },
+    {
+      "schema": "https://compliance-atoms.com/schemas/atom-v1.json",
+      "type": "evidence-type",
+      "id": "hipaa-audit-log",
+      "version": "1.0.0",
+      "name": "HIPAA Audit Log Records",
+      "description": "Tamper-evident audit logs for all access to electronic PHI (ePHI). Required by §164.312(b). Minimum 6-year retention per §164.530(j).",
+      "content": {
+        "retention_days": 2190,
+        "required_fields": [
+          "timestamp",
+          "actor",
+          "action",
+          "resource",
+          "outcome",
+          "patient-record-id"
+        ],
+        "tamper_evidence": "immutable storage or cryptographic hash chaining",
+        "required_for": [
+          "hipaa-audit-controls"
+        ]
+      },
+      "tags": [
+        "hipaa",
+        "audit-log",
+        "ephi",
+        "evidence",
+        "retention",
+        "tamper-evident"
       ]
     },
     {

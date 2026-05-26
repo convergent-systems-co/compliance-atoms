@@ -1,0 +1,15 @@
+{
+  "schema": "https://compliance-atoms.com/schemas/atom-v1.json",
+  "type": "control-family",
+  "id": "hipaa-physical-safeguards",
+  "version": "1.0.0",
+  "name": "HIPAA Physical Safeguards",
+  "description": "Physical Safeguards (45 CFR §164.310) require covered entities and business associates to implement physical measures, policies, and procedures to protect electronic information systems and related buildings and equipment from natural and environmental hazards and unauthorized intrusion.",
+  "content": {
+    "applies_to": ["hipaa"],
+    "sub_domains": ["facility-access-controls", "workstation-use", "workstation-security", "device-and-media-controls"],
+    "control_count": 4,
+    "cfr_section": "§164.310"
+  },
+  "tags": ["hipaa", "physical-safeguards", "facility-access", "workstation", "device-controls"]
+}

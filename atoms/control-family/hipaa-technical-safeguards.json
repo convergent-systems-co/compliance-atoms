@@ -1,0 +1,15 @@
+{
+  "schema": "https://compliance-atoms.com/schemas/atom-v1.json",
+  "type": "control-family",
+  "id": "hipaa-technical-safeguards",
+  "version": "1.0.0",
+  "name": "HIPAA Technical Safeguards",
+  "description": "Technical Safeguards (45 CFR §164.312) require covered entities and business associates to implement technical policies and procedures to protect electronic protected health information (ePHI). Covers access control, audit controls, integrity, person or entity authentication, and transmission security.",
+  "content": {
+    "applies_to": ["hipaa"],
+    "sub_domains": ["access-control", "audit-controls", "integrity", "person-authentication", "transmission-security"],
+    "control_count": 5,
+    "cfr_section": "§164.312"
+  },
+  "tags": ["hipaa", "technical-safeguards", "ephi", "access-control", "audit", "transmission-security"]
+}

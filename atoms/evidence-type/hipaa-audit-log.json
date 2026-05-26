@@ -1,0 +1,15 @@
+{
+  "schema": "https://compliance-atoms.com/schemas/atom-v1.json",
+  "type": "evidence-type",
+  "id": "hipaa-audit-log",
+  "version": "1.0.0",
+  "name": "HIPAA Audit Log Records",
+  "description": "Tamper-evident audit logs for all access to electronic PHI (ePHI). Required by §164.312(b). Minimum 6-year retention per §164.530(j).",
+  "content": {
+    "retention_days": 2190,
+    "required_fields": ["timestamp", "actor", "action", "resource", "outcome", "patient-record-id"],
+    "tamper_evidence": "immutable storage or cryptographic hash chaining",
+    "required_for": ["hipaa-audit-controls"]
+  },
+  "tags": ["hipaa", "audit-log", "ephi", "evidence", "retention", "tamper-evident"]
+}
