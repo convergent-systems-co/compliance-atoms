@@ -1,0 +1,13 @@
+{
+  "schema": "https://compliance-atoms.com/schemas/atom-v1.json",
+  "type": "control",
+  "id": "multi-factor-authentication",
+  "version": "1.0.0",
+  "name": "Multi-Factor Authentication for Production Access",
+  "description": "Requires multi-factor authentication (MFA) for all accounts with access to production systems, infrastructure, or sensitive data stores. MFA must combine at least two independent factors from the categories: knowledge (password/PIN), possession (TOTP/hardware key), and inherence (biometric).",
+  "framework": "soc2",
+  "control_id": "CC-MFA-001",
+  "requirement_text": "All accounts with production access MUST use MFA",
+  "evidence_types": ["audit-log"],
+  "tags": ["mfa", "authentication", "production", "access-control", "soc2"]
+}

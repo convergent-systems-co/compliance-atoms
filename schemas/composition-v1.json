@@ -1,0 +1,57 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://compliance-atoms.com/schemas/composition-v1.json",
+  "title": "compliance-atoms v1 framework composition",
+  "description": "A compliance-framework composition — an assembled artifact that maps a named compliance framework (SOC2, ISO27001, HIPAA, GDPR, PCI-DSS) by grouping its control families, controls, evidence types, and audit requirements into a single queryable unit.",
+  "type": "object",
+  "required": ["schema", "type", "id", "version", "name", "atoms"],
+  "additionalProperties": false,
+  "properties": {
+    "schema": {
+      "type": "string",
+      "const": "https://compliance-atoms.com/schemas/composition-v1.json"
+    },
+    "type": { "type": "string", "const": "compliance-framework" },
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9-]{1,62}[a-z0-9]$"
+    },
+    "version": {
+      "type": "string",
+      "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+(?:-[A-Za-z0-9.-]+)?$"
+    },
+    "name": { "type": "string", "minLength": 1, "maxLength": 120 },
+    "description": { "type": "string", "maxLength": 1000 },
+    "framework": {
+      "type": "string",
+      "enum": ["iso27001", "hipaa", "soc2", "gdpr", "pci-dss"]
+    },
+    "tags": {
+      "type": "array",
+      "items": { "type": "string", "minLength": 1, "maxLength": 60 },
+      "uniqueItems": true
+    },
+    "atoms": {
+      "type": "object",
+      "description": "Atom references grouped by type.",
+      "additionalProperties": false,
+      "properties": {
+        "control_families":    { "type": "array", "items": { "$ref": "#/$defs/ref" }, "uniqueItems": true },
+        "controls":            { "type": "array", "items": { "$ref": "#/$defs/ref" }, "uniqueItems": true },
+        "evidence_types":      { "type": "array", "items": { "$ref": "#/$defs/ref" }, "uniqueItems": true },
+        "audit_requirements":  { "type": "array", "items": { "$ref": "#/$defs/ref" }, "uniqueItems": true }
+      }
+    }
+  },
+  "$defs": {
+    "ref": {
+      "type": "object",
+      "required": ["ref", "version"],
+      "additionalProperties": false,
+      "properties": {
+        "ref":     { "type": "string", "pattern": "^compliance-atoms://atoms/[a-z-]+/[a-z0-9-]+$" },
+        "version": { "type": "string", "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+(?:-[A-Za-z0-9.-]+)?$" }
+      }
+    }
+  }
+}

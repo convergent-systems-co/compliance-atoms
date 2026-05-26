@@ -1,0 +1,54 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://compliance-atoms.com/schemas/atom-v1.json",
+  "title": "compliance-atoms v1 atom",
+  "description": "A single atom in the compliance-atoms catalog. Discriminated by `type`. compliance-atoms holds the primitives for cross-framework compliance mapping — control families, controls, evidence types, and audit requirements spanning SOC2, ISO27001, HIPAA, GDPR, and PCI-DSS.",
+  "type": "object",
+  "required": ["schema", "type", "id", "version", "name"],
+  "additionalProperties": false,
+  "properties": {
+    "schema": {
+      "type": "string",
+      "const": "https://compliance-atoms.com/schemas/atom-v1.json"
+    },
+    "type": {
+      "type": "string",
+      "enum": ["control-family", "control", "evidence-type", "audit-requirement"]
+    },
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9-]{1,62}[a-z0-9]$"
+    },
+    "version": {
+      "type": "string",
+      "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+(?:-[A-Za-z0-9.-]+)?$"
+    },
+    "name": { "type": "string", "minLength": 1, "maxLength": 120 },
+    "description": { "type": "string", "maxLength": 1000 },
+    "framework": {
+      "type": "string",
+      "enum": ["iso27001", "hipaa", "soc2", "gdpr", "pci-dss"],
+      "description": "Primary compliance framework this atom belongs to. Use cross_frameworks on control-family atoms when the atom spans multiple frameworks."
+    },
+    "control_id": {
+      "type": "string",
+      "description": "Vendor- or framework-assigned control identifier (e.g., CC6.1, A.9.2.3, §164.312(a)(1))."
+    },
+    "requirement_text": {
+      "type": "string",
+      "maxLength": 2000,
+      "description": "The normative requirement text, quoted or paraphrased from the authoritative source."
+    },
+    "evidence_types": {
+      "type": "array",
+      "description": "IDs of evidence-type atoms that satisfy this control or audit requirement.",
+      "items": { "type": "string" },
+      "uniqueItems": true
+    },
+    "tags": {
+      "type": "array",
+      "items": { "type": "string", "minLength": 1, "maxLength": 60 },
+      "uniqueItems": true
+    }
+  }
+}
