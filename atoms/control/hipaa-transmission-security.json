@@ -1,0 +1,18 @@
+{
+  "schema": "https://compliance-atoms.com/schemas/atom-v1.json",
+  "type": "control",
+  "id": "hipaa-transmission-security",
+  "version": "1.0.0",
+  "name": "HIPAA Transmission Security",
+  "description": "Implement technical security measures to guard against unauthorized access to electronic protected health information that is being transmitted over an electronic communications network.",
+  "framework": "hipaa",
+  "control_id": "§164.312(e)(1)",
+  "requirement_text": "Implement technical security measures to guard against unauthorized access to electronic protected health information that is being transmitted over an electronic communications network.",
+  "evidence_types": ["audit-log"],
+  "content": {
+    "family_ref": "hipaa-technical-safeguards",
+    "implementation_specs": ["integrity-controls", "encryption"],
+    "notes": "Encryption is an addressable implementation specification — covered entities must encrypt ePHI in transit or document why encryption is not reasonable and appropriate."
+  },
+  "tags": ["hipaa", "transmission-security", "encryption", "tls", "ephi", "technical-safeguards"]
+}
