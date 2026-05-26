@@ -1,0 +1,15 @@
+{
+  "schema": "https://compliance-atoms.com/schemas/atom-v1.json",
+  "type": "control-family",
+  "id": "iso27001-technological",
+  "version": "1.0.0",
+  "name": "ISO27001 Technological Controls",
+  "description": "Technology controls — access control, cryptography, network security, vulnerability management, logging and monitoring (Annex A Clause 8). 34 controls.",
+  "content": {
+    "applies_to": ["iso27001"],
+    "sub_domains": ["access-control", "cryptography", "network-security", "vulnerability-management", "logging-monitoring"],
+    "control_count": 34,
+    "annex_clause": "A.8"
+  },
+  "tags": ["iso27001", "technological", "access-control", "cryptography", "network-security", "vulnerability-management"]
+}

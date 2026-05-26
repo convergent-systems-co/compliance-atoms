@@ -1,0 +1,13 @@
+{
+  "schema": "https://compliance-atoms.com/schemas/atom-v1.json",
+  "type": "control",
+  "id": "iso27001-a8-12-data-leakage-prevention",
+  "version": "1.0.0",
+  "name": "ISO27001 A.8.12 Data Leakage Prevention",
+  "description": "Data leakage prevention measures shall be applied to systems, networks, and any other devices that process, store, or transmit sensitive information to detect and prevent the unauthorized disclosure of information.",
+  "framework": "iso27001",
+  "control_id": "A.8.12",
+  "requirement_text": "Data leakage prevention measures shall be applied to systems, networks and any other devices that process, store or transmit sensitive information.",
+  "evidence_types": ["audit-log"],
+  "tags": ["iso27001", "data-leakage-prevention", "dlp", "data-protection", "technological", "a8-12"]
+}

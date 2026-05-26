@@ -1,0 +1,13 @@
+{
+  "schema": "https://compliance-atoms.com/schemas/atom-v1.json",
+  "type": "control",
+  "id": "iso27001-a8-8-management-of-technical-vulnerabilities",
+  "version": "1.0.0",
+  "name": "ISO27001 A.8.8 Management of Technical Vulnerabilities",
+  "description": "Information about technical vulnerabilities of information systems in use shall be obtained in a timely fashion, the organization's exposure to such vulnerabilities evaluated, and appropriate measures taken to address the associated risk.",
+  "framework": "iso27001",
+  "control_id": "A.8.8",
+  "requirement_text": "Information about technical vulnerabilities of information systems in use shall be obtained in a timely fashion.",
+  "evidence_types": ["audit-log", "penetration-test-report"],
+  "tags": ["iso27001", "vulnerability-management", "patching", "technological", "a8-8"]
+}

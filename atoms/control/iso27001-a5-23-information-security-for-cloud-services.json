@@ -1,0 +1,13 @@
+{
+  "schema": "https://compliance-atoms.com/schemas/atom-v1.json",
+  "type": "control",
+  "id": "iso27001-a5-23-information-security-for-cloud-services",
+  "version": "1.0.0",
+  "name": "ISO27001 A.5.23 Information Security for Cloud Services",
+  "description": "Processes for acquisition, use, management, and exit from cloud services shall be established in accordance with the organization's information security requirements.",
+  "framework": "iso27001",
+  "control_id": "A.5.23",
+  "requirement_text": "Processes for acquisition, use, management and exit from cloud services shall be established.",
+  "evidence_types": ["audit-log"],
+  "tags": ["iso27001", "cloud-services", "vendor-management", "organizational", "a5-23"]
+}

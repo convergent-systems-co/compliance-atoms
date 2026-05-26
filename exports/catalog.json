@@ -1,8 +1,181 @@
 {
   "catalog": "compliance-atoms",
   "version": "0.1.0",
-  "built_at": "2026-05-26T16:01:20+00:00",
+  "built_at": "2026-05-26T17:23:22+00:00",
   "atoms": [
+    {
+      "schema": "https://compliance-atoms.com/schemas/atom-v1.json",
+      "type": "control",
+      "id": "iso27001-a5-1-information-security-policies",
+      "version": "1.0.0",
+      "name": "ISO27001 A.5.1 Information Security Policies",
+      "description": "Requires management-approved information security policies that are published, communicated, and acknowledged by all relevant personnel. Policies must be reviewed at planned intervals or when significant changes occur.",
+      "framework": "iso27001",
+      "control_id": "A.5.1",
+      "requirement_text": "Policies for information security shall be defined, approved by management, published, communicated to and acknowledged by relevant personnel.",
+      "evidence_types": [
+        "audit-log"
+      ],
+      "tags": [
+        "iso27001",
+        "policies",
+        "governance",
+        "organizational",
+        "a5-1"
+      ]
+    },
+    {
+      "schema": "https://compliance-atoms.com/schemas/atom-v1.json",
+      "type": "control",
+      "id": "iso27001-a5-15-access-control",
+      "version": "1.0.0",
+      "name": "ISO27001 A.5.15 Access Control",
+      "description": "Rules governing physical and logical access to information and associated assets shall be established and implemented based on business and information security requirements.",
+      "framework": "iso27001",
+      "control_id": "A.5.15",
+      "requirement_text": "Rules to control physical and logical access to information and other associated assets shall be established and implemented.",
+      "evidence_types": [
+        "audit-log",
+        "access-review-log"
+      ],
+      "tags": [
+        "iso27001",
+        "access-control",
+        "authorization",
+        "organizational",
+        "a5-15"
+      ]
+    },
+    {
+      "schema": "https://compliance-atoms.com/schemas/atom-v1.json",
+      "type": "control",
+      "id": "iso27001-a5-23-information-security-for-cloud-services",
+      "version": "1.0.0",
+      "name": "ISO27001 A.5.23 Information Security for Cloud Services",
+      "description": "Processes for acquisition, use, management, and exit from cloud services shall be established in accordance with the organization's information security requirements.",
+      "framework": "iso27001",
+      "control_id": "A.5.23",
+      "requirement_text": "Processes for acquisition, use, management and exit from cloud services shall be established.",
+      "evidence_types": [
+        "audit-log"
+      ],
+      "tags": [
+        "iso27001",
+        "cloud-services",
+        "vendor-management",
+        "organizational",
+        "a5-23"
+      ]
+    },
+    {
+      "schema": "https://compliance-atoms.com/schemas/atom-v1.json",
+      "type": "control",
+      "id": "iso27001-a8-12-data-leakage-prevention",
+      "version": "1.0.0",
+      "name": "ISO27001 A.8.12 Data Leakage Prevention",
+      "description": "Data leakage prevention measures shall be applied to systems, networks, and any other devices that process, store, or transmit sensitive information to detect and prevent the unauthorized disclosure of information.",
+      "framework": "iso27001",
+      "control_id": "A.8.12",
+      "requirement_text": "Data leakage prevention measures shall be applied to systems, networks and any other devices that process, store or transmit sensitive information.",
+      "evidence_types": [
+        "audit-log"
+      ],
+      "tags": [
+        "iso27001",
+        "data-leakage-prevention",
+        "dlp",
+        "data-protection",
+        "technological",
+        "a8-12"
+      ]
+    },
+    {
+      "schema": "https://compliance-atoms.com/schemas/atom-v1.json",
+      "type": "control",
+      "id": "iso27001-a8-2-privileged-access-rights",
+      "version": "1.0.0",
+      "name": "ISO27001 A.8.2 Privileged Access Rights",
+      "description": "Allocation and use of privileged access rights shall be restricted and managed through a formal authorization process, with regular review and revocation when no longer required.",
+      "framework": "iso27001",
+      "control_id": "A.8.2",
+      "requirement_text": "The allocation and use of privileged access rights shall be restricted and managed.",
+      "evidence_types": [
+        "audit-log",
+        "access-review-log"
+      ],
+      "tags": [
+        "iso27001",
+        "privileged-access",
+        "access-control",
+        "technological",
+        "a8-2"
+      ]
+    },
+    {
+      "schema": "https://compliance-atoms.com/schemas/atom-v1.json",
+      "type": "control",
+      "id": "iso27001-a8-24-use-of-cryptography",
+      "version": "1.0.0",
+      "name": "ISO27001 A.8.24 Use of Cryptography",
+      "description": "Rules for the effective use of cryptography, including cryptographic key management, shall be defined and implemented to protect information based on its classification and applicable legal, statutory, regulatory, and contractual requirements.",
+      "framework": "iso27001",
+      "control_id": "A.8.24",
+      "requirement_text": "Rules for the effective use of cryptography, including cryptographic key management, shall be defined and implemented.",
+      "evidence_types": [
+        "audit-log"
+      ],
+      "tags": [
+        "iso27001",
+        "cryptography",
+        "key-management",
+        "encryption",
+        "technological",
+        "a8-24"
+      ]
+    },
+    {
+      "schema": "https://compliance-atoms.com/schemas/atom-v1.json",
+      "type": "control",
+      "id": "iso27001-a8-5-secure-authentication",
+      "version": "1.0.0",
+      "name": "ISO27001 A.8.5 Secure Authentication",
+      "description": "Secure authentication technologies and procedures shall be implemented based on information access restrictions and information security policy, considering factors such as password quality, multi-factor authentication, and session management.",
+      "framework": "iso27001",
+      "control_id": "A.8.5",
+      "requirement_text": "Secure authentication technologies and procedures shall be implemented based on information access restrictions.",
+      "evidence_types": [
+        "audit-log"
+      ],
+      "tags": [
+        "iso27001",
+        "authentication",
+        "mfa",
+        "technological",
+        "a8-5"
+      ]
+    },
+    {
+      "schema": "https://compliance-atoms.com/schemas/atom-v1.json",
+      "type": "control",
+      "id": "iso27001-a8-8-management-of-technical-vulnerabilities",
+      "version": "1.0.0",
+      "name": "ISO27001 A.8.8 Management of Technical Vulnerabilities",
+      "description": "Information about technical vulnerabilities of information systems in use shall be obtained in a timely fashion, the organization's exposure to such vulnerabilities evaluated, and appropriate measures taken to address the associated risk.",
+      "framework": "iso27001",
+      "control_id": "A.8.8",
+      "requirement_text": "Information about technical vulnerabilities of information systems in use shall be obtained in a timely fashion.",
+      "evidence_types": [
+        "audit-log",
+        "penetration-test-report"
+      ],
+      "tags": [
+        "iso27001",
+        "vulnerability-management",
+        "patching",
+        "technological",
+        "a8-8"
+      ]
+    },
     {
       "schema": "https://compliance-atoms.com/schemas/atom-v1.json",
       "type": "control",
@@ -55,6 +228,152 @@
     },
     {
       "schema": "https://compliance-atoms.com/schemas/atom-v1.json",
+      "type": "control-family",
+      "id": "iso27001-organizational",
+      "version": "1.0.0",
+      "name": "ISO27001 Organizational Controls",
+      "description": "Controls relating to policies, roles, responsibilities, and processes (Annex A Clause 5). Covers information security policies, roles and responsibilities, threat intelligence, supplier relationships, and incident management. 37 controls.",
+      "content": {
+        "applies_to": [
+          "iso27001"
+        ],
+        "sub_domains": [
+          "policies",
+          "roles-and-responsibilities",
+          "threat-intelligence",
+          "supplier-security",
+          "incident-management"
+        ],
+        "control_count": 37,
+        "annex_clause": "A.5"
+      },
+      "tags": [
+        "iso27001",
+        "organizational",
+        "governance",
+        "policies",
+        "incident-management"
+      ]
+    },
+    {
+      "schema": "https://compliance-atoms.com/schemas/atom-v1.json",
+      "type": "control-family",
+      "id": "iso27001-people",
+      "version": "1.0.0",
+      "name": "ISO27001 People Controls",
+      "description": "Controls for human resources security — screening, awareness training, disciplinary process, and remote working arrangements (Annex A Clause 6). 8 controls.",
+      "content": {
+        "applies_to": [
+          "iso27001"
+        ],
+        "sub_domains": [
+          "screening",
+          "terms-of-employment",
+          "security-awareness",
+          "disciplinary-process",
+          "remote-working"
+        ],
+        "control_count": 8,
+        "annex_clause": "A.6"
+      },
+      "tags": [
+        "iso27001",
+        "people",
+        "human-resources",
+        "security-awareness",
+        "screening"
+      ]
+    },
+    {
+      "schema": "https://compliance-atoms.com/schemas/atom-v1.json",
+      "type": "control-family",
+      "id": "iso27001-physical",
+      "version": "1.0.0",
+      "name": "ISO27001 Physical Controls",
+      "description": "Physical environment security — entry controls, clear desk and screen policies, equipment security, and physical media handling (Annex A Clause 7). 14 controls.",
+      "content": {
+        "applies_to": [
+          "iso27001"
+        ],
+        "sub_domains": [
+          "physical-access",
+          "clear-desk-screen",
+          "equipment-security",
+          "physical-media",
+          "secure-areas"
+        ],
+        "control_count": 14,
+        "annex_clause": "A.7"
+      },
+      "tags": [
+        "iso27001",
+        "physical",
+        "physical-access",
+        "equipment-security",
+        "secure-areas"
+      ]
+    },
+    {
+      "schema": "https://compliance-atoms.com/schemas/atom-v1.json",
+      "type": "control-family",
+      "id": "iso27001-technological",
+      "version": "1.0.0",
+      "name": "ISO27001 Technological Controls",
+      "description": "Technology controls — access control, cryptography, network security, vulnerability management, logging and monitoring (Annex A Clause 8). 34 controls.",
+      "content": {
+        "applies_to": [
+          "iso27001"
+        ],
+        "sub_domains": [
+          "access-control",
+          "cryptography",
+          "network-security",
+          "vulnerability-management",
+          "logging-monitoring"
+        ],
+        "control_count": 34,
+        "annex_clause": "A.8"
+      },
+      "tags": [
+        "iso27001",
+        "technological",
+        "access-control",
+        "cryptography",
+        "network-security",
+        "vulnerability-management"
+      ]
+    },
+    {
+      "schema": "https://compliance-atoms.com/schemas/atom-v1.json",
+      "type": "evidence-type",
+      "id": "access-review-log",
+      "version": "1.0.0",
+      "name": "Access Review Log",
+      "description": "Quarterly access rights review records demonstrating A.5.15 compliance. Documents all user accounts and privilege levels reviewed, decisions made (retain, modify, or revoke), reviewer identity, and completion date.",
+      "content": {
+        "retention_days": 730,
+        "required_fields": [
+          "review-date",
+          "reviewer",
+          "accounts-reviewed",
+          "decisions",
+          "completion-date"
+        ],
+        "required_for": [
+          "iso27001-a5-15"
+        ]
+      },
+      "tags": [
+        "access-review",
+        "user-access",
+        "evidence",
+        "iso27001",
+        "a5-15",
+        "a8-2"
+      ]
+    },
+    {
+      "schema": "https://compliance-atoms.com/schemas/atom-v1.json",
       "type": "evidence-type",
       "id": "audit-log",
       "version": "1.0.0",
@@ -77,6 +396,35 @@
         "evidence",
         "access-events",
         "compliance"
+      ]
+    },
+    {
+      "schema": "https://compliance-atoms.com/schemas/atom-v1.json",
+      "type": "evidence-type",
+      "id": "penetration-test-report",
+      "version": "1.0.0",
+      "name": "Penetration Test Report",
+      "description": "Regular penetration test reports demonstrating vulnerability assessment and remediation tracking. Reports must document scope, methodology, findings with severity ratings, and remediation status.",
+      "content": {
+        "retention_days": 365,
+        "required_fields": [
+          "scope",
+          "methodology",
+          "findings",
+          "severity-ratings",
+          "remediation-status",
+          "test-date"
+        ],
+        "required_for": [
+          "iso27001-a8-8"
+        ]
+      },
+      "tags": [
+        "penetration-testing",
+        "vulnerability-assessment",
+        "evidence",
+        "iso27001",
+        "a8-8"
       ]
     }
   ],

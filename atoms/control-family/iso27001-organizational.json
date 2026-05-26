@@ -1,0 +1,15 @@
+{
+  "schema": "https://compliance-atoms.com/schemas/atom-v1.json",
+  "type": "control-family",
+  "id": "iso27001-organizational",
+  "version": "1.0.0",
+  "name": "ISO27001 Organizational Controls",
+  "description": "Controls relating to policies, roles, responsibilities, and processes (Annex A Clause 5). Covers information security policies, roles and responsibilities, threat intelligence, supplier relationships, and incident management. 37 controls.",
+  "content": {
+    "applies_to": ["iso27001"],
+    "sub_domains": ["policies", "roles-and-responsibilities", "threat-intelligence", "supplier-security", "incident-management"],
+    "control_count": 37,
+    "annex_clause": "A.5"
+  },
+  "tags": ["iso27001", "organizational", "governance", "policies", "incident-management"]
+}
