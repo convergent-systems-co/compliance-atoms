@@ -1,0 +1,13 @@
+{
+  "schema": "https://compliance-atoms.com/schemas/atom-v1.json",
+  "type": "control-family",
+  "id": "access-control",
+  "version": "1.0.0",
+  "name": "Access Control",
+  "description": "The Access Control family covers authentication, authorization, and least-privilege enforcement across all systems and services. It spans identity verification, role-based and attribute-based access decisions, privileged access management, and session controls.",
+  "content": {
+    "applies_to": ["iso27001", "soc2", "hipaa"],
+    "sub_domains": ["authentication", "authorization", "least-privilege", "privileged-access", "session-management"]
+  },
+  "tags": ["access-control", "authentication", "authorization", "least-privilege", "identity"]
+}

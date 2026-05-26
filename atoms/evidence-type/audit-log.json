@@ -1,0 +1,14 @@
+{
+  "schema": "https://compliance-atoms.com/schemas/atom-v1.json",
+  "type": "evidence-type",
+  "id": "audit-log",
+  "version": "1.0.0",
+  "name": "Audit Log Records",
+  "description": "Tamper-evident logs capturing all access events, changes, and administrative actions",
+  "content": {
+    "retention_days": 365,
+    "required_fields": ["timestamp", "actor", "action", "resource", "outcome"],
+    "tamper_evidence": "immutable storage or cryptographic hash chaining"
+  },
+  "tags": ["audit", "logging", "evidence", "access-events", "compliance"]
+}

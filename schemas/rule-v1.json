@@ -1,0 +1,83 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://compliance-atoms.com/schemas/rule-v1.json",
+  "title": "compliance-atoms v1 rule",
+  "description": "A constraint rule governing evidence requirements, review cadence, and framework-alignment validation for atoms in a compliance-atoms catalog or framework composition.",
+  "type": "object",
+  "required": ["schema", "type", "id", "version", "name"],
+  "additionalProperties": false,
+  "properties": {
+    "schema": {
+      "type": "string",
+      "const": "https://compliance-atoms.com/schemas/rule-v1.json"
+    },
+    "type": {
+      "type": "string",
+      "enum": ["evidence-required", "periodic-review", "framework-alignment"],
+      "description": "evidence-required: controls must have at least one linked evidence-type. periodic-review: controls must be reviewed on a defined cadence. framework-alignment: atoms must declare a recognized framework."
+    },
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9-]{1,62}[a-z0-9]$"
+    },
+    "version": {
+      "type": "string",
+      "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+(?:-[A-Za-z0-9.-]+)?$"
+    },
+    "name": { "type": "string", "minLength": 1, "maxLength": 120 },
+    "description": { "type": "string", "maxLength": 1000 },
+    "applies_to": {
+      "type": "array",
+      "description": "Atom types this rule constrains. Empty means all types.",
+      "items": {
+        "type": "string",
+        "enum": ["control-family", "control", "evidence-type", "audit-requirement"]
+      },
+      "uniqueItems": true
+    },
+    "evidence_required": {
+      "type": "object",
+      "description": "Present when type=evidence-required.",
+      "additionalProperties": false,
+      "properties": {
+        "minimum_evidence_types": {
+          "type": "integer",
+          "minimum": 1,
+          "description": "Minimum number of evidence_types that must be linked to a control or audit-requirement atom."
+        }
+      },
+      "required": ["minimum_evidence_types"]
+    },
+    "periodic_review": {
+      "type": "object",
+      "description": "Present when type=periodic-review.",
+      "additionalProperties": false,
+      "properties": {
+        "interval_days": {
+          "type": "integer",
+          "minimum": 1,
+          "description": "Maximum number of days between reviews of any atom governed by this rule."
+        }
+      },
+      "required": ["interval_days"]
+    },
+    "framework_alignment": {
+      "type": "object",
+      "description": "Present when type=framework-alignment.",
+      "additionalProperties": false,
+      "properties": {
+        "required_frameworks": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": ["iso27001", "hipaa", "soc2", "gdpr", "pci-dss"]
+          },
+          "minItems": 1,
+          "uniqueItems": true,
+          "description": "At least one of these framework values must be set on every atom governed by this rule."
+        }
+      },
+      "required": ["required_frameworks"]
+    }
+  }
+}
