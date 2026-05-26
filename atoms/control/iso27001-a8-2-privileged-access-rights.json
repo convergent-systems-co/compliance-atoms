@@ -1,0 +1,13 @@
+{
+  "schema": "https://compliance-atoms.com/schemas/atom-v1.json",
+  "type": "control",
+  "id": "iso27001-a8-2-privileged-access-rights",
+  "version": "1.0.0",
+  "name": "ISO27001 A.8.2 Privileged Access Rights",
+  "description": "Allocation and use of privileged access rights shall be restricted and managed through a formal authorization process, with regular review and revocation when no longer required.",
+  "framework": "iso27001",
+  "control_id": "A.8.2",
+  "requirement_text": "The allocation and use of privileged access rights shall be restricted and managed.",
+  "evidence_types": ["audit-log", "access-review-log"],
+  "tags": ["iso27001", "privileged-access", "access-control", "technological", "a8-2"]
+}

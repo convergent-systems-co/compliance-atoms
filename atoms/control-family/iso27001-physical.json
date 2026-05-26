@@ -1,0 +1,15 @@
+{
+  "schema": "https://compliance-atoms.com/schemas/atom-v1.json",
+  "type": "control-family",
+  "id": "iso27001-physical",
+  "version": "1.0.0",
+  "name": "ISO27001 Physical Controls",
+  "description": "Physical environment security — entry controls, clear desk and screen policies, equipment security, and physical media handling (Annex A Clause 7). 14 controls.",
+  "content": {
+    "applies_to": ["iso27001"],
+    "sub_domains": ["physical-access", "clear-desk-screen", "equipment-security", "physical-media", "secure-areas"],
+    "control_count": 14,
+    "annex_clause": "A.7"
+  },
+  "tags": ["iso27001", "physical", "physical-access", "equipment-security", "secure-areas"]
+}

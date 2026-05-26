@@ -1,0 +1,13 @@
+{
+  "schema": "https://compliance-atoms.com/schemas/atom-v1.json",
+  "type": "control",
+  "id": "iso27001-a5-1-information-security-policies",
+  "version": "1.0.0",
+  "name": "ISO27001 A.5.1 Information Security Policies",
+  "description": "Requires management-approved information security policies that are published, communicated, and acknowledged by all relevant personnel. Policies must be reviewed at planned intervals or when significant changes occur.",
+  "framework": "iso27001",
+  "control_id": "A.5.1",
+  "requirement_text": "Policies for information security shall be defined, approved by management, published, communicated to and acknowledged by relevant personnel.",
+  "evidence_types": ["audit-log"],
+  "tags": ["iso27001", "policies", "governance", "organizational", "a5-1"]
+}

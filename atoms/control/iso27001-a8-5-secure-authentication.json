@@ -1,0 +1,13 @@
+{
+  "schema": "https://compliance-atoms.com/schemas/atom-v1.json",
+  "type": "control",
+  "id": "iso27001-a8-5-secure-authentication",
+  "version": "1.0.0",
+  "name": "ISO27001 A.8.5 Secure Authentication",
+  "description": "Secure authentication technologies and procedures shall be implemented based on information access restrictions and information security policy, considering factors such as password quality, multi-factor authentication, and session management.",
+  "framework": "iso27001",
+  "control_id": "A.8.5",
+  "requirement_text": "Secure authentication technologies and procedures shall be implemented based on information access restrictions.",
+  "evidence_types": ["audit-log"],
+  "tags": ["iso27001", "authentication", "mfa", "technological", "a8-5"]
+}

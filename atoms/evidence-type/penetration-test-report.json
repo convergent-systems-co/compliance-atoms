@@ -1,0 +1,14 @@
+{
+  "schema": "https://compliance-atoms.com/schemas/atom-v1.json",
+  "type": "evidence-type",
+  "id": "penetration-test-report",
+  "version": "1.0.0",
+  "name": "Penetration Test Report",
+  "description": "Regular penetration test reports demonstrating vulnerability assessment and remediation tracking. Reports must document scope, methodology, findings with severity ratings, and remediation status.",
+  "content": {
+    "retention_days": 365,
+    "required_fields": ["scope", "methodology", "findings", "severity-ratings", "remediation-status", "test-date"],
+    "required_for": ["iso27001-a8-8"]
+  },
+  "tags": ["penetration-testing", "vulnerability-assessment", "evidence", "iso27001", "a8-8"]
+}

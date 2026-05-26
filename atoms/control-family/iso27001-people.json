@@ -1,0 +1,15 @@
+{
+  "schema": "https://compliance-atoms.com/schemas/atom-v1.json",
+  "type": "control-family",
+  "id": "iso27001-people",
+  "version": "1.0.0",
+  "name": "ISO27001 People Controls",
+  "description": "Controls for human resources security — screening, awareness training, disciplinary process, and remote working arrangements (Annex A Clause 6). 8 controls.",
+  "content": {
+    "applies_to": ["iso27001"],
+    "sub_domains": ["screening", "terms-of-employment", "security-awareness", "disciplinary-process", "remote-working"],
+    "control_count": 8,
+    "annex_clause": "A.6"
+  },
+  "tags": ["iso27001", "people", "human-resources", "security-awareness", "screening"]
+}

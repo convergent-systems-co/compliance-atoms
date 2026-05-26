@@ -1,0 +1,13 @@
+{
+  "schema": "https://compliance-atoms.com/schemas/atom-v1.json",
+  "type": "control",
+  "id": "iso27001-a5-15-access-control",
+  "version": "1.0.0",
+  "name": "ISO27001 A.5.15 Access Control",
+  "description": "Rules governing physical and logical access to information and associated assets shall be established and implemented based on business and information security requirements.",
+  "framework": "iso27001",
+  "control_id": "A.5.15",
+  "requirement_text": "Rules to control physical and logical access to information and other associated assets shall be established and implemented.",
+  "evidence_types": ["audit-log", "access-review-log"],
+  "tags": ["iso27001", "access-control", "authorization", "organizational", "a5-15"]
+}

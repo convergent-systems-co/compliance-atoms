@@ -1,0 +1,14 @@
+{
+  "schema": "https://compliance-atoms.com/schemas/atom-v1.json",
+  "type": "evidence-type",
+  "id": "access-review-log",
+  "version": "1.0.0",
+  "name": "Access Review Log",
+  "description": "Quarterly access rights review records demonstrating A.5.15 compliance. Documents all user accounts and privilege levels reviewed, decisions made (retain, modify, or revoke), reviewer identity, and completion date.",
+  "content": {
+    "retention_days": 730,
+    "required_fields": ["review-date", "reviewer", "accounts-reviewed", "decisions", "completion-date"],
+    "required_for": ["iso27001-a5-15"]
+  },
+  "tags": ["access-review", "user-access", "evidence", "iso27001", "a5-15", "a8-2"]
+}
